@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@sociant/api-interfaces';
+
+import { AppService } from './app.service';
 
 @Component({
   selector: 'sociant-root',
   template: `
-    <div>{{(response$ | async).message}}</div>
+    <div>{{(message$ | async).message}}</div>
   `
 })
 export class AppComponent {
-  response$ = this.http.get<Message>('/api/hello');
+  message$ = this.service.getMessage();
 
-  constructor(private readonly http: HttpClient) {
+  constructor(private readonly service: AppService) {
   }
 }
