@@ -4,10 +4,13 @@ import { Message } from '@sociant/api-interfaces';
 
 @Component({
   selector: 'sociant-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  template: `
+    <div>{{response$ | json}}</div>
+  `
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  response$ = this.http.get<Message>('/api/hello');
+
+  constructor(private readonly http: HttpClient) {
+  }
 }
