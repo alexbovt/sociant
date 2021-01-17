@@ -5,7 +5,7 @@ import { Message } from '@sociant/api-interfaces';
 @Component({
   selector: 'sociant-root',
   template: `
-    <div>{{response$ | json}}</div>
+    <div>{{(response$ | async).message}}</div>
   `
 })
 export class AppComponent {
