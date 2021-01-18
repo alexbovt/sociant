@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AppService {
-  constructor(private readonly http: HttpClient) {
+  constructor(
+    private readonly http: HttpClient
+  ) {
   }
 
   getMessage(): Observable<Message> {
