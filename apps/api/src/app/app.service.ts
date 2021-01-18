@@ -4,6 +4,8 @@ import { Message } from '@sociant/api-interfaces';
 @Injectable()
 export class AppService {
   getData(): Message {
-    return { message: 'Welcome to api!' };
+    return {
+      message: 'Welcome to api!'
+    };
   }
 }
